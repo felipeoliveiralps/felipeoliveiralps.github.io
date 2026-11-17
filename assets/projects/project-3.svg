@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="1065" height="546" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bgP3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+    <filter id="p3Glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgP3)" />
+
+  <!-- App Header -->
+  <rect x="40" y="30" width="720" height="46" rx="12" fill="#141d30" stroke="#222f47" stroke-width="1.5" />
+  <circle cx="68" cy="53" r="6" fill="#ef4444" /><circle cx="88" cy="53" r="6" fill="#f59e0b" /><circle cx="108" cy="53" r="6" fill="#10b981" />
+  <text x="400" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">PyTorch / HuggingFace — NLP_Sentiment_B2W_BERT_LSTM.py</text>
+
+  <!-- Top Model Comparison Cards -->
+  <g transform="translate(40, 96)">
+    <!-- Card BERT -->
+    <rect width="345" height="115" rx="14" fill="#101828" stroke="#38bdf8" stroke-width="2" />
+    <text x="20" y="30" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Transformer: BERTimbau (Base)</text>
+    <text x="20" y="52" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Fine-Tuning com Hugging Face Trainer</text>
+    <text x="20" y="88" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="22" font-weight="bold">94.2%</text>
+    <text x="100" y="88" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">Acurácia F1</text>
+    <rect x="230" y="70" width="95" height="26" rx="6" fill="#065f46" />
+    <text x="277" y="87" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">BEST MODEL</text>
+
+    <!-- Card LSTM -->
+    <rect x="375" width="345" height="115" rx="14" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="395" y="30" fill="#818cf8" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Bi-LSTM (Bidirecional)</text>
+    <text x="395" y="52" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Embedding Word2Vec + Dropout (0.3)</text>
+    <text x="395" y="88" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="22" font-weight="bold">88.7%</text>
+    <text x="475" y="88" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">Acurácia F1</text>
+    <rect x="610" y="70" width="90" height="26" rx="6" fill="#1e293b" />
+    <text x="655" y="87" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">12ms inferência</text>
+  </g>
+
+  <!-- Live Inference Pipeline Showcase -->
+  <g transform="translate(40, 230)">
+    <rect width="720" height="325" rx="14" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="24" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Pipeline de Inferência em Tempo Real (Avaliações B2W)</text>
+
+    <!-- Sample Review 1: Positive -->
+    <g transform="translate(24, 60)">
+      <rect width="672" height="75" rx="10" fill="#0f172a" stroke="#1e293b" />
+      <text x="16" y="28" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">&ldquo;Produto chegou antes do prazo e com excelente qualidade! Recomendo muito a loja.&rdquo;</text>
+      <!-- Tokens -->
+      <text x="16" y="54" fill="#64748b" font-family="monospace" font-size="11">Tokens: [CLS] produto chegou antes prazo excelente qualidade [SEP]</text>
+      <!-- Sentiment Badge -->
+      <rect x="540" y="24" width="115" height="28" rx="6" fill="#065f46" />
+      <text x="597" y="42" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">POSITIVO (98%)</text>
+    </g>
+
+    <!-- Sample Review 2: Negative -->
+    <g transform="translate(24, 150)">
+      <rect width="672" height="75" rx="10" fill="#0f172a" stroke="#1e293b" />
+      <text x="16" y="28" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13">&ldquo;Veio com defeito na embalagem e não ligou na primeira tentativa. Decepcionado.&rdquo;</text>
+      <!-- Tokens -->
+      <text x="16" y="54" fill="#64748b" font-family="monospace" font-size="11">Tokens: [CLS] veio defeito embalagem nao ligou primeira tentativa [SEP]</text>
+      <!-- Sentiment Badge -->
+      <rect x="540" y="24" width="115" height="28" rx="6" fill="#7f1d1d" />
+      <text x="597" y="42" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">NEGATIVO (96%)</text>
+    </g>
+
+    <!-- Confusion Matrix Summary snippet -->
+    <g transform="translate(24, 240)">
+      <rect width="672" height="60" rx="8" fill="#141c2e" />
+      <text x="20" y="35" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Matriz de Confusão:</text>
+      <text x="170" y="35" fill="#94a3b8" font-family="monospace" font-size="12">Verdadeiros Positivos: 14.280  |  Falsos Positivos: 412  |  F1 Macro: 0.94</text>
+    </g>
+  </g>
+</svg>

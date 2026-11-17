@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felipe Oliveira Lopes — Ciência de Dados, ML &amp; IA</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="Portfólio de Felipe Oliveira Lopes — Estudante de Ciência e Tecnologia (UFABC), Ciência de Dados, Machine Learning, NLP e Cloud Computing."
+    />
+    <meta property="og:title" content="Felipe Oliveira Lopes — Ciência de Dados, ML &amp; IA" />
+    <meta
+      property="og:description"
+      content="Portfólio de Ciência de Dados, Machine Learning, Deep Learning (NLP) e Cloud Computing."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:," />
+
+    <!-- Google Fonts: Fraunces, Space Grotesk, Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Ambient Background Grid & Violet Glow -->
+    <div class="bg-canvas" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-orb bg-orb-1"></div>
+      <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <!-- Floating Glass Navbar -->
+    <header class="navbar-wrapper">
+      <nav class="navbar container" aria-label="Navegação principal">
+        <a href="#sobre" class="brand" aria-label="Felipe Oliveira Lopes">
+          <span class="brand-name">Felipe Oliveira Lopes</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links"></ul>
+
+        <div class="nav-actions">
+          <button
+            type="button"
+            id="lang-toggle"
+            class="icon-pill-btn mono"
+            aria-label="Switch to English"
+          >
+            <span class="lang-active" data-lang="pt">PT</span>
+            <span class="lang-sep">/</span>
+            <span data-lang="en">EN</span>
+          </button>
+
+          <button
+            type="button"
+            id="theme-toggle"
+            class="icon-btn"
+            aria-label="Alternar tema claro/escuro"
+          >
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
+
+          <a
+            id="nav-cv-btn"
+            href="assets/Felipe-Oliveira-Lopes-CV.pdf"
+            download="Felipe Oliveira Lopes CV.pdf"
+            class="nav-cta"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" x2="12" y1="15" y2="3"></line>
+            </svg>
+            <span id="nav-cv-label">Currículo</span>
+          </a>
+
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="icon-btn mobile-only"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <svg
+              class="icon-menu"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+            <svg
+              class="icon-close"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-drawer" class="mobile-drawer" hidden>
+        <ul id="mobile-nav-links" class="mobile-nav-links"></ul>
+        <a
+          id="mobile-cv-btn"
+          href="assets/Felipe-Oliveira-Lopes-CV.pdf"
+          download="Felipe Oliveira Lopes CV.pdf"
+          class="btn btn-primary mobile-drawer-cta"
+        >
+          <span id="mobile-cv-label">Baixar Currículo (PDF)</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <!-- SECTION 1: OPEN HERO WITH ANIMATED SUNBURST & CAROUSEL -->
+      <section id="sobre" class="section hero-lair" aria-labelledby="hero-display-title">
+        <div class="hero-sunburst-wrap" aria-hidden="true">
+          <div class="hero-sunburst"></div>
+          <div class="hero-ambient-glow"></div>
+        </div>
+
+        <div class="hero-lair-content reveal is-visible">
+          <p class="hero-diamond-kicker">
+            <svg class="diamond-emblem" viewBox="0 0 28 18" fill="none" aria-hidden="true">
+              <path
+                d="M9 1.5L16.5 9L9 16.5L1.5 9L9 1.5Z"
+                stroke="currentColor"
+                stroke-width="1.35"
+              />
+              <path
+                d="M9 5.2L12.8 9L9 12.8L5.2 9L9 5.2Z"
+                fill="currentColor"
+              />
+              <path
+                d="M19 4L24 9L19 14L14 9L19 4Z"
+                stroke="currentColor"
+                stroke-width="1.2"
+                opacity="0.7"
+              />
+            </svg>
+            <span id="hero-kicker-text">Ciência &amp; Tecnologia e Ciência da Computação • UFABC</span>
+          </p>
+
+          <h1 class="hero-display-title" id="hero-display-title">Felipe Oliveira Lopes</h1>
+          <div class="hero-gold-rule" aria-hidden="true"></div>
+
+          <div id="hero-slide-paragraphs" class="hero-lair-paragraphs"></div>
+
+          <div class="hero-lair-actions">
+            <button type="button" id="hero-primary-btn" class="btn-lair btn-lair-primary">
+              <span id="hero-primary-label">Explorar Projetos</span>
+            </button>
+
+            <a
+              id="hero-secondary-btn"
+              href="assets/Felipe-Oliveira-Lopes-CV.pdf"
+              download="Felipe Oliveira Lopes CV.pdf"
+              class="btn-lair btn-lair-secondary"
+            >
+              <span id="hero-secondary-label">Baixar Currículo (PDF)</span>
+            </a>
+
+            <div class="hero-quick-links">
+              <button type="button" class="btn-lair-ghost" id="hero-copy-email">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                </svg>
+                <span id="hero-copy-email-label">Copiar E-mail</span>
+              </button>
+
+              <a
+                id="social-github"
+                href="https://github.com/felipeoliveiralps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  ></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+              </a>
+
+              <a
+                id="social-linkedin"
+                href="https://www.linkedin.com/in/felipeoliveiralps"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-carousel-controls" role="region" aria-label="Destaques do portfólio">
+            <button
+              type="button"
+              id="hero-prev-slide"
+              class="carousel-square-btn"
+              aria-label="Slide anterior"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+
+            <div id="hero-dots" class="carousel-dots" role="tablist" aria-label="Selecionar slide"></div>
+
+            <button
+              type="button"
+              id="hero-next-slide"
+              class="carousel-square-btn"
+              aria-label="Próximo slide"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              id="hero-pause-slide"
+              class="carousel-square-btn"
+              aria-label="Pausar rotação"
+              aria-pressed="false"
+            >
+              <svg
+                class="icon-pause"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+              <svg
+                class="icon-play"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: PROJECTS & CASE STUDIES -->
+      <section id="projetos" class="section" aria-labelledby="projects-title">
+        <div class="section-head reveal">
+          <span class="section-tag mono" id="projects-tag">// CASE STUDIES</span>
+          <h2 class="section-title" id="projects-title">Projetos &amp; Experiência Prática</h2>
+          <p class="section-subtitle" id="projects-subtitle"></p>
+        </div>
+
+        <div
+          id="projects-filters"
+          class="filter-pills projects-filters reveal"
+          role="group"
+          aria-label="Filtrar projetos por categoria"
+        ></div>
+
+        <div id="projects-grid" class="projects-grid"></div>
+      </section>
+
+      <!-- SECTION 5: EDUCATION & CERTIFICATIONS -->
+      <section id="curriculo" class="section" aria-labelledby="resume-title">
+        <div class="section-head reveal">
+          <span class="section-tag mono" id="resume-tag">// ACADEMICS &amp; CREDENTIALS</span>
+          <h2 class="section-title" id="resume-title">Educação &amp; Certificações</h2>
+          <p class="section-subtitle" id="resume-subtitle"></p>
+        </div>
+
+        <div id="degree-container" class="reveal"></div>
+        <div id="certificates-grid" class="certificates-grid"></div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer container">
+      <div class="footer-inner">
+        <p class="footer-copy mono" id="footer-rights">
+          Felipe Oliveira Lopes • Portfólio GitHub Pages
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://www.felipeoliveira.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="footer-original-link"
+            >Site Principal</a
+          >
+          <a href="https://github.com/felipeoliveiralps" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/felipeoliveiralps" target="_blank" rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Project Case Study Modal -->
+    <div
+      id="project-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      hidden
+    >
+      <div class="modal-dialog" id="modal-dialog">
+        <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Fechar">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <span id="modal-category-badge" class="category-pill mono"></span>
+          <h3 id="modal-title" class="modal-title"></h3>
+        </div>
+
+        <!-- Gallery Stage -->
+        <div class="modal-gallery" id="modal-gallery-wrap">
+          <div class="modal-stage">
+            <img id="modal-main-image" src="" alt="" class="modal-main-img" />
+            <span id="modal-image-counter" class="modal-counter mono">1 / 1</span>
+
+            <button
+              type="button"
+              id="modal-prev-btn"
+              class="gallery-nav-btn gallery-prev"
+              aria-label="Imagem anterior"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              id="modal-next-btn"
+              class="gallery-nav-btn gallery-next"
+              aria-label="Próxima imagem"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div id="modal-thumbnails" class="modal-thumbnails"></div>
+        </div>
+
+        <!-- Case Study Body -->
+        <div class="modal-body">
+          <p id="modal-short-desc" class="modal-lead"></p>
+          <p id="modal-full-desc" class="modal-desc"></p>
+
+          <div class="modal-block">
+            <h4 id="modal-tech-label" class="modal-block-title mono"></h4>
+            <div id="modal-tech-list" class="tech-pills"></div>
+          </div>
+
+          <div class="modal-block">
+            <h4 id="modal-features-label" class="modal-block-title mono"></h4>
+            <ul id="modal-features-list" class="modal-features-list"></ul>
+          </div>
+
+          <div class="modal-challenge-box">
+            <h4 id="modal-challenges-label" class="modal-block-title mono"></h4>
+            <p id="modal-challenges-text"></p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a
+            id="modal-live-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" x2="21" y1="14" y2="3"></line>
+            </svg>
+            <span id="modal-live-label">Visualizar no GitHub</span>
+          </a>
+
+          <a
+            id="modal-code-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+              ></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            <span id="modal-code-label">Ver Repositório</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

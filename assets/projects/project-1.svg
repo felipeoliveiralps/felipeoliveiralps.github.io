@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="1065" height="546" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bgP1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#070b14" />
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <filter id="p1Glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgP1)" />
+
+  <!-- App Header -->
+  <rect x="40" y="30" width="720" height="46" rx="12" fill="#141c2e" stroke="#1e293b" stroke-width="1.5" />
+  <circle cx="68" cy="53" r="6" fill="#ef4444" />
+  <circle cx="88" cy="53" r="6" fill="#f59e0b" />
+  <circle cx="108" cy="53" r="6" fill="#10b981" />
+  <text x="400" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="middle">JupyterLab — EDA_GamersClub_Churn_Analysis.ipynb</text>
+
+  <!-- Metric Badges Row -->
+  <g transform="translate(40, 96)">
+    <rect width="220" height="85" rx="12" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="20" y="28" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Total de Usuários Analisados</text>
+    <text x="20" y="58" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">120.450</text>
+    <text x="145" y="58" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">GamersClub</text>
+
+    <rect x="245" width="230" height="85" rx="12" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="265" y="28" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Taxa Global de Churn</text>
+    <text x="265" y="58" fill="#ef4444" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">18.4%</text>
+    <text x="350" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Assinaturas</text>
+
+    <rect x="495" width="225" height="85" rx="12" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="515" y="28" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Correlação Crítica</text>
+    <text x="515" y="58" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">-0.74</text>
+    <text x="595" y="58" fill="#10b981" font-family="system-ui, sans-serif" font-size="12">Horas / Mês</text>
+  </g>
+
+  <!-- Distribution Chart (Hours Played vs Churn Status) -->
+  <g transform="translate(40, 200)">
+    <rect width="440" height="360" rx="14" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="24" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Distribuição de Horas Jogadas vs. Churn</text>
+    <text x="24" y="50" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Histograma Seaborn com curvas de densidade KDE</text>
+
+    <!-- Grid lines -->
+    <line x1="40" y1="90" x2="410" y2="90" stroke="#1e293b" />
+    <line x1="40" y1="150" x2="410" y2="150" stroke="#1e293b" />
+    <line x1="40" y1="210" x2="410" y2="210" stroke="#1e293b" />
+    <line x1="40" y1="270" x2="410" y2="270" stroke="#1e293b" />
+    <line x1="40" y1="300" x2="410" y2="300" stroke="#334155" />
+
+    <!-- Histogram Bars (Retained - Blue) -->
+    <rect x="60" y="220" width="30" height="80" rx="3" fill="#2563eb" opacity="0.8" />
+    <rect x="100" y="140" width="30" height="160" rx="3" fill="#2563eb" opacity="0.8" />
+    <rect x="140" y="90" width="30" height="210" rx="3" fill="#2563eb" opacity="0.8" />
+    <rect x="180" y="110" width="30" height="190" rx="3" fill="#2563eb" opacity="0.8" />
+    <rect x="220" y="160" width="30" height="140" rx="3" fill="#2563eb" opacity="0.8" />
+    <rect x="260" y="230" width="30" height="70" rx="3" fill="#2563eb" opacity="0.8" />
+
+    <!-- Churned curve (Red overlay) -->
+    <path d="M 60 120 Q 110 100, 160 180 T 260 280 T 360 295" fill="none" stroke="#ef4444" stroke-width="3" filter="url(#p1Glow)" />
+
+    <!-- Legend -->
+    <rect x="240" y="32" width="12" height="12" rx="2" fill="#2563eb" />
+    <text x="260" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Usuários Ativos</text>
+    <rect x="345" y="32" width="12" height="12" rx="2" fill="#ef4444" />
+    <text x="365" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Churners</text>
+  </g>
+
+  <!-- Heatmap of Correlations on Right -->
+  <g transform="translate(500, 200)">
+    <rect width="260" height="360" rx="14" fill="#101828" stroke="#1e293b" stroke-width="1.5" />
+    <text x="20" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Matriz de Correlação</text>
+    <text x="20" y="50" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Heatmap Pearson (Pandas)</text>
+
+    <!-- 3x3 Heatmap Grid -->
+    <g transform="translate(20, 75)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="68" height="68" rx="6" fill="#38bdf8" />
+      <text x="34" y="40" fill="#020617" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">1.00</text>
+      <rect x="74" y="0" width="68" height="68" rx="6" fill="#1e3a8a" />
+      <text x="108" y="40" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">0.68</text>
+      <rect x="148" y="0" width="68" height="68" rx="6" fill="#7f1d1d" />
+      <text x="182" y="40" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">-0.74</text>
+
+      <!-- Row 2 -->
+      <rect x="0" y="74" width="68" height="68" rx="6" fill="#1e3a8a" />
+      <text x="34" y="114" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">0.68</text>
+      <rect x="74" y="74" width="68" height="68" rx="6" fill="#38bdf8" />
+      <text x="108" y="114" fill="#020617" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">1.00</text>
+      <rect x="148" y="74" width="68" height="68" rx="6" fill="#991b1b" />
+      <text x="182" y="114" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">-0.52</text>
+
+      <!-- Row 3 -->
+      <rect x="0" y="148" width="68" height="68" rx="6" fill="#7f1d1d" />
+      <text x="34" y="188" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">-0.74</text>
+      <rect x="74" y="148" width="68" height="68" rx="6" fill="#991b1b" />
+      <text x="108" y="188" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">-0.52</text>
+      <rect x="148" y="148" width="68" height="68" rx="6" fill="#38bdf8" />
+      <text x="182" y="188" fill="#020617" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">1.00</text>
+    </g>
+
+    <text x="20" y="325" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">✓ Insights exportados para Scikit-Learn</text>
+  </g>
+</svg>

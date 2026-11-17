@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="100%" height="100%">
+  <g fill="#cbd5e1">
+    <circle cx="20" cy="30" r="10" fill="none" stroke="#cbd5e1" stroke-width="3" />
+    <circle cx="32" cy="24" r="8" fill="none" stroke="#cbd5e1" stroke-width="2.5" />
+    <text x="50" y="37" font-family="system-ui, sans-serif" font-size="17" font-weight="700" letter-spacing="1">scikit-learn</text>
+  </g>
+</svg>
